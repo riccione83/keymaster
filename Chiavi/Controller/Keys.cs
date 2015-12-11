@@ -23,6 +23,20 @@ namespace Chiavi
                 index = 0;
         }
 
+        public Key current(string KeyNumber)
+        {
+            int indx = 0;
+            foreach (Key key in keys)
+            {
+                if (key.KeyNumber == KeyNumber)
+                {
+                    index = indx;
+                    return key;
+                }
+                indx++;
+            }
+            return null;
+        }
         public Key current()
         {
             if (keys.Count > 0)
@@ -62,12 +76,20 @@ namespace Chiavi
             return new Key();
         }
 
-        public void newKey(string keyNumber)
+        public void updateKey(Key key)
         {
-            Key key = new Key();
-            key.KeyNumber = keyNumber;
             DBConnect database = new DBConnect();
-            string sql = "INSERT INTO `Keys` (KeyNumber) VALUES('" + keyNumber + "')";
+
+            string expiryDate = DateTime.Parse(key.ExpiryDate).ToString("yyyy-MM-dd HH:mm:ss");
+
+            string sql = "UPDATE `Keys` SET Description = '" + key.Description + "', ExpiryDate= '" + expiryDate + "', Position='" + key.Position + "' WHERE KeyNumber = '" + key.KeyNumber + "'";
+            database.Insert(sql);
+        }
+
+        public void newKey(Key key)
+        {
+            DBConnect database = new DBConnect();
+            string sql = "INSERT INTO `Keys` (KeyNumber,Description,ExpiryDate) VALUES('" + key.KeyNumber + "','" + key.Description + "','" + key.ExpiryDate + "')";
             database.Insert(sql);
             keys.Add(key);
         }
@@ -103,6 +125,29 @@ namespace Chiavi
             }
         }
 
+        public void loadFreeKey()
+        {
+            keys = loadOnlyFreeKey();
+            if (keys == null)
+                keys = new List<Key>();
+            else
+                index = 0;
+        }
+
+        public void loadAllKey()
+        {
+            keys = load();
+            if (keys == null)
+                keys = new List<Key>();
+            else
+                index = 0;
+        }
+
+        List<Key> loadOnlyFreeKey()
+        {
+            DBConnect database = new DBConnect();
+            return database.SelectKeys("0");
+        }
 
         List<Key> load()
         {
@@ -123,10 +168,14 @@ namespace Chiavi
             returnedData = database.Select(query);
             if (returnedData.Count > 0)
             {
-                user.ID = returnedData["id"].ToString();
-                user.Name = returnedData["Name"].ToString();
-                user.Surname = returnedData["Surname"].ToString();
-                user.EmailAddress = returnedData["Email"].ToString();
+                user.ID = (returnedData["id"] + "");
+                user.Name = (returnedData["Name"] + "");
+                user.Surname = (returnedData["Surname"] + "");
+                user.EmailAddress = (returnedData["Email"] + "");
+                user.Address = (returnedData["Address"] + "");
+                user.City = (returnedData["City"] + "");
+                user.Note = (returnedData["Note"] + "");
+                user.UserPassword = (returnedData["Password"] + "");
                 return user;
             }
             return null;

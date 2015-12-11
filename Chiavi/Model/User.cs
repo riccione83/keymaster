@@ -7,12 +7,40 @@ using System.Threading.Tasks;
 namespace Chiavi
 {
   [Serializable()]
-    class User
+    public class User
     {
         string _name;
         string _surname;
         string _emailAddress;
         string _id;
+        string _userPassword;
+        string _address;
+        string _city;
+        string _notes;
+
+        public string Note
+        {
+            get { return _notes; }
+            set { _notes = value; }
+        }
+
+        public string City
+        {
+            get { return _city; }
+            set { _city = value; }
+        }
+
+        public string Address
+        {
+            get { return _address; }
+            set { _address = value; }
+        }
+
+        public string UserPassword
+        {
+            get { return _userPassword; }
+            set { _userPassword = value; }
+        }
 
         public string Name
         {

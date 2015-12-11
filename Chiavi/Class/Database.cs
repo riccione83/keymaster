@@ -143,7 +143,7 @@ namespace Chiavi
         //Select statement
         public List<User> SelectUser()
         {
-            string query = "SELECT * FROM Users";
+            string query = "SELECT * FROM Users ORDER BY Surname";
 
             //Create a list to store the result
             List<User> list = new List<User>();
@@ -164,6 +164,11 @@ namespace Chiavi
                     user.Name = (dataReader["Name"] + "");
                     user.Surname = (dataReader["Surname"] + "");
                     user.EmailAddress = (dataReader["Email"] + "");
+                    user.Address = (dataReader["Address"] + "");
+                    user.City = (dataReader["City"] + "");
+                    user.Note = (dataReader["Note"] + "");
+                    user.UserPassword = (dataReader["Password"] + "");
+
                     list.Add(user);
                 }
 
@@ -284,6 +289,9 @@ namespace Chiavi
                     Key key = new Key();
                     //key.ID = (dataReader["ID"] + "");
                     key.KeyNumber = (dataReader["KeyNumber"] + "");
+                    key.Description = (dataReader["Description"] + "");
+                    key.ExpiryDate = (dataReader["ExpiryDate"] + "");
+                    key.Position = (dataReader["Position"] + "");
                     list.Add(key);
                 }
 

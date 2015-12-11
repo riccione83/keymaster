@@ -18,3 +18,15 @@ C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\Chiavi\obj\
 C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\Chiavi\obj\Debug\Chiavi.Form1.resources
 C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\Chiavi\obj\Debug\Chiavi.Properties.Resources.resources
 C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\Chiavi\obj\Debug\Chiavi.csproj.GenerateResource.Cache
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\bin\Debug\Chiavi.exe.config
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Debug\Chiavi.exe
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Debug\Chiavi.pdb
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Debug\Chiavi.csprojResolveAssemblyReference.cache
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Debug\Chiavi.Form1.resources
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Debug\Chiavi.Properties.Resources.resources
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Debug\Chiavi.csproj.GenerateResource.Cache
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\bin\Debug\Chiavi.exe
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\bin\Debug\Chiavi.pdb
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\bin\Debug\MySql.Data.dll
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Debug\Chiavi.frmQuadro.resources
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Debug\Chiavi.frmOptions.resources

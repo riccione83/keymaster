@@ -109,20 +109,18 @@ namespace Chiavi
             return users.Last();
         }
 
+        public void saveUser(User user)
+        {
+            DBConnect database = new DBConnect();
+            string sql = "UPDATE Users SET Name = '" + user.Name + "', Surname = '" + user.Surname + "', Email = '" + user.EmailAddress + "',Password = '" + user.UserPassword + "',Address = '" + user.Address + "',City = '" + user.City + "',Note = '" + user.Note + "' WHERE id = '"+user.ID+"'";
+            database.Insert(sql);
+        }
         public void newUser(User user)
         {
-            if (!USE_DATABASE)
-            {
-                user.ID = users.Count.ToString();
-                users.Add(user);
-            }
-            else
-            {
                 DBConnect database = new DBConnect();
-                string sql = "INSERT INTO Users (Name, Surname, Email) VALUES('" +user.Name+"', '" + user.Surname + "','r.riki@tiscali.it')";
+                string sql = "INSERT INTO Users (Name, Surname, Email,Password,Address,City,Note) VALUES('" +user.Name+"', '" + user.Surname + "','" + user.EmailAddress + "','" + user.UserPassword + "','" + user.Address + "','" + user.City + "','" + user.Note + "')";
                 database.Insert(sql);
                 users.Add(user);
-            }
         }
 
     }
