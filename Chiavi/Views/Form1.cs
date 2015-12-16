@@ -5,9 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System.IO.Ports;
+using System.IO;
 
 namespace Chiavi
 {
@@ -63,17 +64,10 @@ namespace Chiavi
 
         private void button1_Click(object sender, EventArgs e)
         {
-            keyUtility.refreshPositions(users.keys);
-            string txt = keyUtility.searchFreeBoxSpace();
-            MessageBox.Show("Preleva la busta e controlla che sia perfettamente integra. Verifica che il codice della busta sia " + users.keys.current().KeyNumber + ". Premi ok per il passo successivo");
-            MessageBox.Show("Posiziona la busta nell'armadio nella posizione " + txt + ". Premi ok quando completato");
-            int[] position = keyUtility.getFreeBoxSpace();
-            keyUtility.setInBoxSpace(position[0], position[1], position[0]);
-            users.keys.current().Position = position[0] + "-" + position[1] + "-" + position[2];
-            users.keys.updateKey(users.keys.current());
+            saveKeyOnBoxForm();
         }
 
-        private void button2_Click(object sender, EventArgs e)  //save
+        private void newUserForm()
         {
             isNew = true;
             txtUserFirstName.Text = "";
@@ -84,6 +78,10 @@ namespace Chiavi
             txtUserPassword.Text = "";
             txtUserSurname.Text = "";
             txtUserEmail.Text = "";
+        }
+        private void button2_Click(object sender, EventArgs e)  //save
+        {
+            newUserForm();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -99,7 +97,7 @@ namespace Chiavi
                 listUsers.Items.Clear();
                 foreach (User user in users.users)
                 {
-                    listUsers.Items.Add(user.Surname + " " + user.Name);
+                    listUsers.Items.Add(user.ID + " - " + user.Surname + " " + user.Name);
                 }
             }
         }
@@ -118,49 +116,58 @@ namespace Chiavi
             selectUser(users.current());
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            User user;
-
-            if (!isNew)
-                user = users.current();
-            else
-                user = new User();
-            
-            user.Name = txtUserFirstName.Text;
-            user.Surname = txtUserSurname.Text;
-            user.Address = txtUserAddress.Text;
-            user.City = txtUserCity.Text;
-            user.EmailAddress = txtUserEmail.Text;
-            user.Note = txtUserNote.Text;
-            user.UserPassword = txtUserPassword.Text;
-            if (isNew)
+        private void saveUserForm() {
+            if (txtUserFirstName.Text != "" &&
+                txtUserSurname.Text != "" &&
+                txtUserAddress.Text != "" &&
+                txtUserCity.Text != "" &&
+                txtUserEmail.Text != "" &&
+                txtUserNote.Text != "")
             {
-                users.newUser(user);
-                Mail mail = new Mail();
-                string message = "Complimenti. Il suo conto KeyService è stato attivato. Potrà accedere dal nostro sito per verificare lo stato delle sue chiavi e verificare i pagamenti.\r\nI suoi dati per l'accesso sono:\r\nEmail: " + user.EmailAddress + "\r\nPassword:" + user.UserPassword + "\r\n\r\nLa ringraziamo per la preferenza accordataci. Cordiali Saluti.\r\nIl team KeyService";
-                mail.sendMail(user.EmailAddress, "Attivazione conto KeyService", message);
+                User user;
+                if (!isNew)
+                    user = users.current();
+                else
+                    user = new User();
+
+                user.Name = txtUserFirstName.Text;
+                user.Surname = txtUserSurname.Text;
+                user.Address = txtUserAddress.Text;
+                user.City = txtUserCity.Text;
+                user.EmailAddress = txtUserEmail.Text;
+                user.Note = txtUserNote.Text;
+                user.UserPassword = txtUserNote.Text;
+                if (isNew)
+                {
+                    users.newUser(user);
+                    Mail mail = new Mail();
+                    string message = "Complimenti. Il suo conto KeyService è stato attivato. Potrà accedere dal nostro sito per verificare lo stato delle sue chiavi e verificare i pagamenti.\r\nI suoi dati per l'accesso sono:\r\nEmail: " + user.EmailAddress + "\r\nPassword:" + user.UserPassword + "\r\n\r\nLa ringraziamo per la preferenza accordataci. Cordiali Saluti.\r\nIl team KeyService";
+                    mail.sendMail(user.EmailAddress, "Attivazione conto KeyService", message);
+                }
+                else
+                {
+                    users.saveUser(user);
+                    MessageBox.Show("Utente correttamente salvato");
+                }
             }
             else
             {
-                users.saveUser(user);
-             }
+                MessageBox.Show("Si prega di inserire tutti i dati.");
+            }
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            saveUserForm();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string question = "Sicuro di voler associare la CARD n."+users.keys.current().KeyNumber+" con il cliente "+users.current().Surname+" "+users.current().Name+"?";
-            DialogResult result = MessageBox.Show(question, "Associare?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(result == System.Windows.Forms.DialogResult.Yes)
-                users.keys.associateToUser(users.current().ID,users.keys.current());
+            assocKeyToUserForm();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            newCard = true;
-            txtKeyNumber.Text = "";
-            txtKeyDescription.Text = "";
-            dateKeyExpiration.Value = DateTime.Now;
+            
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -188,7 +195,7 @@ namespace Chiavi
             }
         }
 
-        private void selectUser(User user)
+        public void selectUser(User user)
         {
             users.setCurrent(user);
             txtUserFirstName.Text = user.Name;
@@ -203,37 +210,10 @@ namespace Chiavi
 
         private void button10_Click(object sender, EventArgs e)
         {
-            string question = "Sicuro di voler separate la CARD n." + users.keys.current().KeyNumber + " con il cliente " + users.current().Surname + " " + users.current().Name + "?";
-            DialogResult result = MessageBox.Show(question, "Disassociare?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == System.Windows.Forms.DialogResult.Yes)
-                users.keys.deassociateFromUser(users.current().ID, users.keys.current());
+            dissocKeyFromUser();
         }
 
-        private void fillPaymentsGrid(string UserID="", string KeyNumber="")
-        {
-            if (UserID == "" && KeyNumber == "") return;
-            string sql = "";
-            DBConnect database = new DBConnect();
-            if (UserID != "")
-                sql = "SELECT * FROM Payments WHERE USER_ID = '" + UserID + "'";
-            else if (KeyNumber != "")
-                sql = "SELECT * FROM Payments WHERE key_number = '" + KeyNumber + "'";
 
-            List<Dictionary<string, object>> returnedData = database.SelectMultiple(sql);
-            int index = 0;
-            paymentData.Rows.Clear();
-            foreach (var payment in returnedData)
-            {
-                paymentData.Rows.Add();
-                paymentData.Rows[index].Cells["ID"].Value = payment["id"].ToString();
-                paymentData.Rows[index].Cells["PaymentID"].Value = payment["payment_id"].ToString();
-                paymentData.Rows[index].Cells["Hash"].Value = payment["hash"].ToString();
-                paymentData.Rows[index].Cells["Complete"].Value = payment["complete"].ToString() == "1" ? "Si" : "No";
-                paymentData.Rows[index].Cells["KeyNum"].Value = payment["key_number"].ToString();
-                paymentData.Rows[index].Cells["CreatedAt"].Value = payment["CreatedAt"].ToString();
-                index++;
-            }
-        }
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -242,29 +222,7 @@ namespace Chiavi
 
         private void button11_Click(object sender, EventArgs e)
         {
-            if (newCard)
-            {
-                if (users.keys.KeyExist(txtKeyNumber.Text) == 0)
-                {
-                    newCard = false;
-                    Key key = new Key();
-                    key.KeyNumber = txtKeyNumber.Text;
-                    key.Description = txtKeyDescription.Text;
-                    key.ExpiryDate = dateKeyExpiration.Value.ToString("yyyy-MM-dd HH:mm:ss");
-                    users.keys.newKey(key);
-                }
-                else
-                {
-                    MessageBox.Show("Chiave già presente in archivio", "Attenzione");
-                }
-            }
-            else
-            {
-                Key key = users.keys.current();
-                key.Description = txtKeyDescription.Text;
-                key.ExpiryDate = dateKeyExpiration.Value.ToString("yyyy-MM-dd HH:mm:ss");
-                users.keys.updateKey(key);
-            }
+            
         }
 
         private void dataKeyView_SelectionChanged(object sender, EventArgs e)
@@ -280,9 +238,9 @@ namespace Chiavi
             }
         }
 
-        private void updateCardInfo(Key key)
+        public void updateCardInfo(Key key)
         {
-            if (key.KeyNumber != null)
+            if (key!=null && key.KeyNumber != null)
             {
                 txtKeyNumber.Text = key.KeyNumber;
                 txtKeyDescription.Text = key.Description;
@@ -313,33 +271,38 @@ namespace Chiavi
 
         private void button12_Click(object sender, EventArgs e)
         {
-            fillPaymentsGrid(users.current().ID);
+            frmPagamenti paymentForm = new frmPagamenti();
+            paymentForm.UserID = users.current().ID;
+            paymentForm.Show();
+           // fillPaymentsGrid(users.current().ID);
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            fillPaymentsGrid("",users.keys.current().KeyNumber);
+            
+           // fillPaymentsGrid("",users.keys.current().KeyNumber);
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("La busta sta per essere asportata. Assicurarsi di prendere la busta dalla posizione:" + users.keys.current().readablePosition() + ". Verifica inoltre che la busta abbia il codice: " + users.keys.current().KeyNumber + ". Premi OK quando pronto.");
-            users.keys.current().Position = "";
-            users.keys.updateKey(users.keys.current());
+            freeKeyForm();
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            frmQuadro frm = new frmQuadro();
+            frmSinottico frm = new frmSinottico();
             frm.Show();
         }
 
         private void listUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
+            isNew = false;
             int index = listUsers.SelectedIndex;
             if (index >= 0)
             {
-                selectUser(users.users[index]);
+                string id = listUsers.Items[index].ToString().Split('-')[0].Replace(" ","");
+                User user = users.searchUserByID(id);
+                selectUser(user);
             }
         }
 
@@ -366,7 +329,7 @@ namespace Chiavi
         {
             frmOptions opzioni = new frmOptions();
             DialogResult res = opzioni.ShowDialog(this);
-            if (res != null)
+            if (res != DialogResult.Cancel)
             {
                 Options opt = new Options();
                 if (opt.UseSerialPort)
@@ -378,7 +341,306 @@ namespace Chiavi
                         
                     barcode = new BarCodeReader(this, opt.ComPort, opt.BaudSpeed);
                 }
+                else
+                {
+                    if (barcode != null)
+                    {
+                        barcode = null;
+                    }
+                }
             }
+        }
+
+        private void menuPagamenti_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            DBConnect db = new DBConnect();
+            db.Backup();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if(restoreDBDialog.ShowDialog() == DialogResult.OK)
+            {
+                DBConnect db = new DBConnect();
+                db.Restore(restoreDBDialog.FileName);
+            }
+        }
+
+        
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            showSearchForm();
+        }
+
+        private void showSearchForm()
+        {
+            frmSearch search = new frmSearch();
+            search.mainFrm = this;
+            search.Show();
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            List<User> userFinded = new List<User>();
+
+            listUsers.Items.Clear();
+
+                foreach (User user in users.users)
+                {
+                    if (user.Name.ToLower().Contains(textBox1.Text.ToLower()) ||
+                        user.Surname.ToLower().Contains(textBox1.Text.ToLower()) ||
+                        user.ID.ToLower().Contains(textBox1.Text.ToLower())
+                      )
+                    {
+                        listUsers.Items.Add(user.ID + " - " + user.Surname + " " + user.Name);
+                    }
+                }
+        }
+
+        private void ricercaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showSearchForm();
+        }
+
+        private void salvaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveUserForm();
+        }
+
+        private void nuovoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            newUserForm();
+        }
+
+        private void pagamentiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPagamenti paymentForm = new frmPagamenti();
+            paymentForm.UserID = users.current().ID;
+            paymentForm.Show();
+        }
+
+        private void backupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DBConnect db = new DBConnect();
+            db.Backup();
+        }
+
+        private void showOptionForm()
+        {
+            frmOptions opzioni = new frmOptions();
+            DialogResult res = opzioni.ShowDialog(this);
+            if (res != DialogResult.Cancel)
+            {
+                Options opt = new Options();
+                if (opt.UseSerialPort)
+                {
+                    if (barcode != null)
+                    {
+                        barcode = null;
+                    }
+
+                    barcode = new BarCodeReader(this, opt.ComPort, opt.BaudSpeed);
+                }
+                else
+                {
+                    if (barcode != null)
+                    {
+                        barcode = null;
+                    }
+                }
+            }
+        }
+        private void opzioniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showOptionForm();
+        }
+
+        private void sinotticoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSinottico frm = new frmSinottico();
+            frm.Show();
+        }
+
+        private void nuovaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            newCard = true;
+            txtKeyNumber.Text = "";
+            txtKeyDescription.Text = "";
+            dateKeyExpiration.Value = DateTime.Now;
+        }
+
+        private void salvaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            saveKeyForm();
+        }
+
+        private void saveKeyForm()
+        {
+            if (newCard)
+            {
+                if (users.keys.KeyExist(txtKeyNumber.Text) == 0)
+                {
+                    newCard = false;
+                    Key key = new Key();
+                    key.KeyNumber = txtKeyNumber.Text;
+                    key.Description = txtKeyDescription.Text;
+                    key.ExpiryDate = dateKeyExpiration.Value.ToString("yyyy-MM-dd HH:mm:ss");
+                    users.keys.newKey(key);
+                }
+                else
+                {
+                    MessageBox.Show("Chiave già presente in archivio", "Attenzione");
+                }
+            }
+            else
+            {
+                Key key = users.keys.current();
+                key.Description = txtKeyDescription.Text;
+                key.ExpiryDate = dateKeyExpiration.Value.ToString("yyyy-MM-dd HH:mm:ss");
+                users.keys.updateKey(key);
+                MessageBox.Show("Salvataggio chiave eseguito con successo", "Salvataggio");
+            }
+        }
+        private void pagamentiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmPagamenti paymentForm = new frmPagamenti();
+            paymentForm.KeyNumber = users.keys.current().KeyNumber;
+            paymentForm.Show();
+        }
+
+        private void conservaBustaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveKeyOnBoxForm();
+        }
+
+        private void saveKeyOnBoxForm()
+        {
+            keyUtility.refreshPositions(users.keys);
+            string txt = keyUtility.searchFreeBoxSpace();
+            MessageBox.Show("Preleva la busta e controlla che sia perfettamente integra. Verifica che il codice della busta sia " + users.keys.current().KeyNumber + ". Premi ok per il passo successivo");
+            MessageBox.Show("Posiziona la busta nell'armadio nella posizione " + txt + ". Premi ok quando completato");
+            int[] position = keyUtility.getFreeBoxSpace();
+            keyUtility.setInBoxSpace(position[0], position[1], position[0]);
+            users.keys.current().Position = position[0] + "-" + position[1] + "-" + position[2];
+            users.keys.updateKey(users.keys.current());
+        }
+        private void liberaBustaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            freeKeyForm();
+        }
+
+        private void freeKeyForm()
+        {
+            MessageBox.Show("La busta sta per essere asportata. Assicurarsi di prendere la busta dalla posizione:" + users.keys.current().readablePosition() + ". Verifica inoltre che la busta abbia il codice: " + users.keys.current().KeyNumber + ". Premi OK quando pronto.");
+            users.keys.current().Position = "";
+            users.keys.updateKey(users.keys.current());
+        }
+        private void associaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            assocKeyToUserForm();
+        }
+
+        private void assocKeyToUserForm()
+        {
+            string question = "Sicuro di voler associare la CARD n." + users.keys.current().KeyNumber + " con il cliente " + users.current().Surname + " " + users.current().Name + "?";
+            DialogResult result = MessageBox.Show(question, "Associare?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+                users.keys.associateToUser(users.current().ID, users.keys.current());
+        }
+
+        private void dissocKeyFromUser()
+        {
+            string question = "Sicuro di voler separate la CARD n." + users.keys.current().KeyNumber + " con il cliente " + users.current().Surname + " " + users.current().Name + "?";
+            DialogResult result = MessageBox.Show(question, "Disassociare?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+                users.keys.deassociateFromUser(users.current().ID, users.keys.current());
+        }
+        private void disassociaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dissocKeyFromUser();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            showSearchForm();
+        }
+
+        private void nuovoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            newUserForm();
+        }
+
+        private void salvaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            saveUserForm();
+        }
+
+        private void pagamentiToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmPagamenti paymentForm = new frmPagamenti();
+            paymentForm.UserID = users.current().ID;
+            paymentForm.Show();
+        }
+
+        private void nuovaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            newCard = true;
+            txtKeyNumber.Text = "";
+            txtKeyDescription.Text = "";
+            dateKeyExpiration.Value = DateTime.Now;
+        }
+
+        private void salvaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            saveKeyForm();
+        }
+
+        private void pagamentiToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            frmPagamenti paymentForm = new frmPagamenti();
+            paymentForm.KeyNumber = users.keys.current().KeyNumber;
+            paymentForm.Show();
+        }
+
+        private void conservaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveKeyOnBoxForm();
+        }
+
+        private void liberaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            freeKeyForm();
+        }
+
+        private void associaAdUtenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            assocKeyToUserForm();
+        }
+
+        private void dissociaDaUtenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dissocKeyFromUser();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            frmSinottico frm = new frmSinottico();
+            frm.Show();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            showOptionForm();
         }
     }
 }

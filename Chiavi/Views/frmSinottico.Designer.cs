@@ -1,6 +1,6 @@
 ﻿namespace Chiavi
 {
-    partial class frmQuadro
+    partial class frmSinottico
     {
         /// <summary>
         /// Required designer variable.

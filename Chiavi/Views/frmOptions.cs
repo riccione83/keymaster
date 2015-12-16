@@ -5,8 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
+using System.IO.Ports;
 
 namespace Chiavi
 {
@@ -37,6 +38,12 @@ namespace Chiavi
             txtComPort.Text = options.ComPort;
             txtComSpeed.Text = options.BaudSpeed.ToString();
             ckUseComPort.Checked = options.UseSerialPort;
+
+            string[] serialPorts = SerialPort.GetPortNames();
+            foreach (String serialName in serialPorts)
+            {
+                txtComPort.Items.Add(serialName);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,6 +57,7 @@ namespace Chiavi
             options.BaudSpeed = int.Parse(txtComSpeed.Text);
             options.UseSerialPort = ckUseComPort.Checked;
             options.saveOptions();
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }

@@ -1,0 +1,13 @@
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\bin\Release\Chiavi.exe.config
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\bin\Release\Chiavi.exe
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\bin\Release\Chiavi.pdb
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\bin\Release\MySql.Data.dll
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.Form1.resources
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.Properties.Resources.resources
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.frmOptions.resources
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.frmPagamenti.resources
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.frmSearch.resources
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.frmSinottico.resources
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.csproj.GenerateResource.Cache
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.exe
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.pdb

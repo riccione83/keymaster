@@ -28,5 +28,7 @@ C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\C
 C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\bin\Debug\Chiavi.exe
 C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\bin\Debug\Chiavi.pdb
 C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\bin\Debug\MySql.Data.dll
-C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Debug\Chiavi.frmQuadro.resources
 C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Debug\Chiavi.frmOptions.resources
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Debug\Chiavi.frmSinottico.resources
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Debug\Chiavi.frmSearch.resources
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Debug\Chiavi.frmPagamenti.resources

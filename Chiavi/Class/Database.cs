@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.IO;
@@ -27,13 +27,12 @@ namespace Chiavi
         //Initialize values
         private void Initialize()
         {
-            server = "localhost";
+            server = "151.3.164.130";
             database = "KeysDB";
-            uid = "root";
-            password = "root";
+            uid = "software";
+            password = "software";
             string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
             connection = new MySqlConnection(connectionString);
         }
@@ -143,7 +142,7 @@ namespace Chiavi
         //Select statement
         public List<User> SelectUser()
         {
-            string query = "SELECT * FROM Users ORDER BY Surname";
+            string query = "SELECT * FROM Users";// ORDER BY Surname";
 
             //Create a list to store the result
             List<User> list = new List<User>();
@@ -352,7 +351,7 @@ namespace Chiavi
 
                 //Save file to C:\ with the current date as a filename
                 string path;
-                path = "C:\\MySqlBackup" + year + "-" + month + "-" + day + "-" + hour + "-" + minute + "-" + second + "-" + millisecond + ".sql";
+                path = "MySqlBackup-" + year + "-" + month + "-" + day + "-" + hour + "-" + minute + "-" + second + "-" + millisecond + ".sql";
                 StreamWriter file = new StreamWriter(path);
 
 
@@ -379,13 +378,13 @@ namespace Chiavi
         }
 
         //Restore
-        public void Restore()
+        public void Restore(string Filename)
         {
             try
             {
                 //Read file from C:\
                 string path;
-                path = "C:\\MySqlBackup.sql";
+                path = Filename;
                 StreamReader file = new StreamReader(path);
                 string input = file.ReadToEnd();
                 file.Close();

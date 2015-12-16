@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.IO.Ports;
 using System.Windows.Forms;
 
@@ -13,13 +13,12 @@ namespace Chiavi
         internal delegate void SerialDataReceivedEventHandlerDelegate(object sender, SerialDataReceivedEventArgs e);
         delegate void SetTextCallback(string text);
         string InputData = String.Empty;
-        public string receivedData;
+        public string receivedData = "";
         Form1 mainForm;
         string COM_PORT;
         int SERIAL_SPEED;
 
         SerialPort ComPort;
-        bool PORT_STATE = false;
 
         public BarCodeReader(Form1 mainForm,string COM_PORT,int SERIAL_SPEED)
         {
@@ -47,12 +46,12 @@ namespace Chiavi
 
         public void Close()
         {
-            PORT_STATE = false;
             ComPort.Close();
         }
         public void Open() 
         {
-                PORT_STATE = true;
+            try
+            {
                 ComPort.PortName = COM_PORT;
                 ComPort.BaudRate = SERIAL_SPEED;
                 ComPort.DataBits = 8;
@@ -60,6 +59,11 @@ namespace Chiavi
                 // ComPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), cboHandShaking.Text);
                 ComPort.Parity = Parity.None;
                 ComPort.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

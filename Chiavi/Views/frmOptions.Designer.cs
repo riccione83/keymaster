@@ -125,6 +125,13 @@
             // txtComSpeed
             // 
             this.txtComSpeed.FormattingEnabled = true;
+            this.txtComSpeed.Items.AddRange(new object[] {
+            "300",
+            "1200",
+            "9600",
+            "19200",
+            "38400",
+            "115200"});
             this.txtComSpeed.Location = new System.Drawing.Point(117, 86);
             this.txtComSpeed.Name = "txtComSpeed";
             this.txtComSpeed.Size = new System.Drawing.Size(147, 21);
@@ -178,6 +185,7 @@
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(547, 438);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);

@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Chiavi
 {
     class KeyUtility
     {
         int[,,] position;
-        const int numOfKeyPerBox = 2;   //Numero di chiavi che si possono inserire in un cassetto
-        const int numOfBoxPerRow = 10;   //Numero di cassetti per ogni riga
-        const int numOfRow = 10;         //numero di file di cassetti (righe per armadio)
-        const int numOfBox = 3;          //Numero di armadi (questo valore è espresso * 2 visto che hanno due facce
+        int numOfKeyPerBox; //= 2;   //Numero di chiavi che si possono inserire in un cassetto
+        int numOfBoxPerRow; //= 10;   //Numero di cassetti per ogni riga
+        int numOfRow; //= 10;         //numero di file di cassetti (righe per armadio)
+        int numOfBox;// = 3;          //Numero di armadi (questo valore è espresso * 2 visto che hanno due facce
 
         public int getNumOfBox() {
            return numOfBox;
@@ -29,6 +29,13 @@ namespace Chiavi
 
         public KeyUtility()
         {
+            Options opt = new Options();
+            this.numOfKeyPerBox = opt.numOfKeyPerBox;   //Numero di chiavi che si possono inserire in un cassetto
+            this.numOfBoxPerRow = opt.numOfBoxPerRow;   //Numero di cassetti per ogni riga
+            this.numOfRow = opt.numOfRow;               //numero di file di cassetti (righe per armadio)
+            this.numOfBox = opt.numOfBox;               //Numero di armadi (questo valore è espresso * 2 visto che hanno due facce
+
+
             position = new int[numOfBox * 2, numOfRow, numOfBoxPerRow];
             for (int face = 0; face < numOfBox * 2; face++)
             {

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.txtUserFirstName = new System.Windows.Forms.TextBox();
             this.txtUserSurname = new System.Windows.Forms.TextBox();
@@ -38,7 +37,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.txtKeyNumber = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -59,42 +57,71 @@
             this.ckOnlyNotAssociated = new System.Windows.Forms.CheckBox();
             this.button14 = new System.Windows.Forms.Button();
             this.txtKeyPosition = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.dateKeyExpiration = new System.Windows.Forms.DateTimePicker();
             this.txtKeyDescription = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.paymentData = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaymentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hash = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Complete = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KeyNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataKeyView = new System.Windows.Forms.DataGridView();
             this.KeyNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExpirationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button15 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.listUsers = new System.Windows.Forms.ListBox();
-            this.button16 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button17 = new System.Windows.Forms.Button();
-            this.menuPagamenti = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.button18 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.restoreDBDialog = new System.Windows.Forms.OpenFileDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.utentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ricercaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuovoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.pagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.nuovoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.pagamentiToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.nuovaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+            this.pagamentiToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.associaAdUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dissociaDaUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.conservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.liberaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.chiaviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuovaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagamentiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.conservaBustaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.liberaBustaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.associaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disassociaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.programmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sinotticoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.opzioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.paymentData)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataKeyView)).BeginInit();
             this.groupBox5.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -111,14 +138,14 @@
             // 
             this.txtUserFirstName.Location = new System.Drawing.Point(73, 29);
             this.txtUserFirstName.Name = "txtUserFirstName";
-            this.txtUserFirstName.Size = new System.Drawing.Size(100, 20);
+            this.txtUserFirstName.Size = new System.Drawing.Size(135, 20);
             this.txtUserFirstName.TabIndex = 3;
             // 
             // txtUserSurname
             // 
             this.txtUserSurname.Location = new System.Drawing.Point(73, 56);
             this.txtUserSurname.Name = "txtUserSurname";
-            this.txtUserSurname.Size = new System.Drawing.Size(100, 20);
+            this.txtUserSurname.Size = new System.Drawing.Size(135, 20);
             this.txtUserSurname.TabIndex = 4;
             // 
             // button2
@@ -178,16 +205,6 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(402, 28);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "New Key";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(323, 126);
@@ -229,7 +246,7 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Location = new System.Drawing.Point(160, 10);
+            this.groupBox1.Location = new System.Drawing.Point(160, 66);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(485, 189);
             this.groupBox1.TabIndex = 15;
@@ -281,14 +298,14 @@
             // 
             this.txtUserCity.Location = new System.Drawing.Point(73, 110);
             this.txtUserCity.Name = "txtUserCity";
-            this.txtUserCity.Size = new System.Drawing.Size(100, 20);
+            this.txtUserCity.Size = new System.Drawing.Size(135, 20);
             this.txtUserCity.TabIndex = 17;
             // 
             // txtUserAddress
             // 
             this.txtUserAddress.Location = new System.Drawing.Point(73, 83);
             this.txtUserAddress.Name = "txtUserAddress";
-            this.txtUserAddress.Size = new System.Drawing.Size(100, 20);
+            this.txtUserAddress.Size = new System.Drawing.Size(135, 20);
             this.txtUserAddress.TabIndex = 16;
             // 
             // label8
@@ -351,8 +368,6 @@
             this.groupBox2.Controls.Add(this.ckOnlyNotAssociated);
             this.groupBox2.Controls.Add(this.button14);
             this.groupBox2.Controls.Add(this.txtKeyPosition);
-            this.groupBox2.Controls.Add(this.button13);
-            this.groupBox2.Controls.Add(this.button11);
             this.groupBox2.Controls.Add(this.dateKeyExpiration);
             this.groupBox2.Controls.Add(this.txtKeyDescription);
             this.groupBox2.Controls.Add(this.label11);
@@ -362,10 +377,9 @@
             this.groupBox2.Controls.Add(this.button10);
             this.groupBox2.Controls.Add(this.txtKeyNumber);
             this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.button9);
             this.groupBox2.Controls.Add(this.button8);
-            this.groupBox2.Location = new System.Drawing.Point(651, 10);
+            this.groupBox2.Location = new System.Drawing.Point(651, 66);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(485, 245);
             this.groupBox2.TabIndex = 16;
@@ -402,26 +416,6 @@
             this.txtKeyPosition.Size = new System.Drawing.Size(164, 31);
             this.txtKeyPosition.TabIndex = 22;
             this.txtKeyPosition.Text = "No Position";
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(402, 84);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 21;
-            this.button13.Text = "Pagamenti";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(402, 54);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 20;
-            this.button11.Text = "Save";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // dateKeyExpiration
             // 
@@ -474,78 +468,10 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.paymentData);
-            this.groupBox3.Location = new System.Drawing.Point(160, 400);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(485, 189);
-            this.groupBox3.TabIndex = 17;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Pagamenti";
-            // 
-            // paymentData
-            // 
-            this.paymentData.AllowUserToAddRows = false;
-            this.paymentData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.paymentData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.paymentData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.CreatedAt,
-            this.PaymentID,
-            this.Hash,
-            this.Complete,
-            this.KeyNum});
-            this.paymentData.ContextMenuStrip = this.menuPagamenti;
-            this.paymentData.Location = new System.Drawing.Point(6, 19);
-            this.paymentData.Name = "paymentData";
-            this.paymentData.Size = new System.Drawing.Size(473, 150);
-            this.paymentData.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.FillWeight = 30F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 30;
-            // 
-            // CreatedAt
-            // 
-            this.CreatedAt.HeaderText = "Eseguito il";
-            this.CreatedAt.Name = "CreatedAt";
-            // 
-            // PaymentID
-            // 
-            this.PaymentID.FillWeight = 200F;
-            this.PaymentID.HeaderText = "ID Pagamento";
-            this.PaymentID.Name = "PaymentID";
-            this.PaymentID.Width = 200;
-            // 
-            // Hash
-            // 
-            this.Hash.HeaderText = "Hash";
-            this.Hash.Name = "Hash";
-            // 
-            // Complete
-            // 
-            this.Complete.FillWeight = 70F;
-            this.Complete.HeaderText = "Pagamento Completato";
-            this.Complete.Name = "Complete";
-            this.Complete.Width = 70;
-            // 
-            // KeyNum
-            // 
-            this.KeyNum.FillWeight = 50F;
-            this.KeyNum.HeaderText = "Numero Key";
-            this.KeyNum.Name = "KeyNum";
-            this.KeyNum.Width = 50;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dataKeyView);
-            this.groupBox4.Location = new System.Drawing.Point(160, 205);
+            this.groupBox4.Location = new System.Drawing.Point(160, 261);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(485, 189);
             this.groupBox4.TabIndex = 18;
@@ -566,6 +492,7 @@
             this.dataKeyView.Location = new System.Drawing.Point(7, 20);
             this.dataKeyView.MultiSelect = false;
             this.dataKeyView.Name = "dataKeyView";
+            this.dataKeyView.ReadOnly = true;
             this.dataKeyView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataKeyView.Size = new System.Drawing.Size(472, 150);
             this.dataKeyView.TabIndex = 0;
@@ -583,33 +510,24 @@
             this.Description.FillWeight = 200F;
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             this.Description.Width = 200;
             // 
             // ExpirationDate
             // 
             this.ExpirationDate.HeaderText = "Expiration Date";
             this.ExpirationDate.Name = "ExpirationDate";
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(1061, 290);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 19;
-            this.button15.Text = "Partial";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.ExpirationDate.ReadOnly = true;
             // 
             // groupBox5
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox5.Controls.Add(this.listUsers);
-            this.groupBox5.Controls.Add(this.button16);
             this.groupBox5.Controls.Add(this.textBox1);
-            this.groupBox5.Location = new System.Drawing.Point(2, 0);
+            this.groupBox5.Location = new System.Drawing.Point(2, 66);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(141, 589);
+            this.groupBox5.Size = new System.Drawing.Size(141, 523);
             this.groupBox5.TabIndex = 20;
             this.groupBox5.TabStop = false;
             // 
@@ -620,20 +538,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listUsers.FormattingEnabled = true;
-            this.listUsers.Location = new System.Drawing.Point(7, 68);
+            this.listUsers.Location = new System.Drawing.Point(6, 42);
             this.listUsers.Name = "listUsers";
-            this.listUsers.Size = new System.Drawing.Size(128, 498);
+            this.listUsers.Size = new System.Drawing.Size(129, 446);
             this.listUsers.TabIndex = 2;
             this.listUsers.SelectedIndexChanged += new System.EventHandler(this.listUsers_SelectedIndexChanged);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(77, 39);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(58, 23);
-            this.button16.TabIndex = 1;
-            this.button16.Text = "Search";
-            this.button16.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -641,10 +550,11 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(129, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(1061, 261);
+            this.button17.Location = new System.Drawing.Point(1061, 364);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(75, 23);
             this.button17.TabIndex = 21;
@@ -652,34 +562,407 @@
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
-            // menuPagamenti
+            // button20
             // 
-            this.menuPagamenti.Name = "menuPagamenti";
-            this.menuPagamenti.Size = new System.Drawing.Size(61, 4);
+            this.button20.Location = new System.Drawing.Point(1061, 393);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(75, 23);
+            this.button20.TabIndex = 25;
+            this.button20.Text = "Restore";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
-            // button18
+            // restoreDBDialog
             // 
-            this.button18.Location = new System.Drawing.Point(1061, 320);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(75, 23);
-            this.button18.TabIndex = 23;
-            this.button18.Text = "Opzioni";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
+            this.restoreDBDialog.DefaultExt = "sql";
+            this.restoreDBDialog.FileName = "Restore DB";
+            this.restoreDBDialog.Filter = "File SQL|*.sql";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ricercaToolStripMenuItem,
+            this.utentiToolStripMenuItem,
+            this.chiaviToolStripMenuItem,
+            this.programmaToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1169, 24);
+            this.menuStrip1.TabIndex = 27;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripDropDownButton1,
+            this.toolStripDropDownButton2,
+            this.toolStripDropDownButton3,
+            this.toolStripDropDownButton4,
+            this.toolStripButton3,
+            this.toolStripButton2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1169, 25);
+            this.toolStrip1.TabIndex = 28;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // utentiToolStripMenuItem
+            // 
+            this.utentiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuovoToolStripMenuItem,
+            this.salvaToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.pagamentiToolStripMenuItem});
+            this.utentiToolStripMenuItem.Image = global::Chiavi.Properties.Resources.user;
+            this.utentiToolStripMenuItem.Name = "utentiToolStripMenuItem";
+            this.utentiToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.utentiToolStripMenuItem.Text = "&Utenti";
+            // 
+            // ricercaToolStripMenuItem
+            // 
+            this.ricercaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.zoom;
+            this.ricercaToolStripMenuItem.Name = "ricercaToolStripMenuItem";
+            this.ricercaToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
+            this.ricercaToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.ricercaToolStripMenuItem.Text = "&Ricerca";
+            this.ricercaToolStripMenuItem.Click += new System.EventHandler(this.ricercaToolStripMenuItem_Click);
+            // 
+            // nuovoToolStripMenuItem
+            // 
+            this.nuovoToolStripMenuItem.Image = global::Chiavi.Properties.Resources.user_add;
+            this.nuovoToolStripMenuItem.Name = "nuovoToolStripMenuItem";
+            this.nuovoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuovoToolStripMenuItem.Text = "Nuovo";
+            this.nuovoToolStripMenuItem.Click += new System.EventHandler(this.nuovoToolStripMenuItem_Click);
+            // 
+            // salvaToolStripMenuItem
+            // 
+            this.salvaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.user_edit;
+            this.salvaToolStripMenuItem.Name = "salvaToolStripMenuItem";
+            this.salvaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.salvaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salvaToolStripMenuItem.Text = "Salva";
+            this.salvaToolStripMenuItem.Click += new System.EventHandler(this.salvaToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 6);
+            // 
+            // pagamentiToolStripMenuItem
+            // 
+            this.pagamentiToolStripMenuItem.Image = global::Chiavi.Properties.Resources.money;
+            this.pagamentiToolStripMenuItem.Name = "pagamentiToolStripMenuItem";
+            this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pagamentiToolStripMenuItem.Text = "Pagamenti";
+            this.pagamentiToolStripMenuItem.Click += new System.EventHandler(this.pagamentiToolStripMenuItem_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Chiavi.Properties.Resources.zoom;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuovoToolStripMenuItem1,
+            this.salvaToolStripMenuItem2,
+            this.toolStripMenuItem4,
+            this.pagamentiToolStripMenuItem2});
+            this.toolStripDropDownButton1.Image = global::Chiavi.Properties.Resources.user;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // nuovoToolStripMenuItem1
+            // 
+            this.nuovoToolStripMenuItem1.Image = global::Chiavi.Properties.Resources.user_add;
+            this.nuovoToolStripMenuItem1.Name = "nuovoToolStripMenuItem1";
+            this.nuovoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.nuovoToolStripMenuItem1.Text = "Nuovo";
+            this.nuovoToolStripMenuItem1.Click += new System.EventHandler(this.nuovoToolStripMenuItem1_Click);
+            // 
+            // salvaToolStripMenuItem2
+            // 
+            this.salvaToolStripMenuItem2.Image = global::Chiavi.Properties.Resources.user_edit;
+            this.salvaToolStripMenuItem2.Name = "salvaToolStripMenuItem2";
+            this.salvaToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.salvaToolStripMenuItem2.Text = "Salva";
+            this.salvaToolStripMenuItem2.Click += new System.EventHandler(this.salvaToolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(128, 6);
+            // 
+            // pagamentiToolStripMenuItem2
+            // 
+            this.pagamentiToolStripMenuItem2.Image = global::Chiavi.Properties.Resources.money;
+            this.pagamentiToolStripMenuItem2.Name = "pagamentiToolStripMenuItem2";
+            this.pagamentiToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.pagamentiToolStripMenuItem2.Text = "Pagamenti";
+            this.pagamentiToolStripMenuItem2.Click += new System.EventHandler(this.pagamentiToolStripMenuItem2_Click);
+            // 
+            // toolStripDropDownButton2
+            // 
+            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuovaToolStripMenuItem1,
+            this.salvaToolStripMenuItem3,
+            this.toolStripMenuItem5,
+            this.pagamentiToolStripMenuItem3});
+            this.toolStripDropDownButton2.Image = global::Chiavi.Properties.Resources.key;
+            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton2.Text = "toolStripDropDownButton2";
+            // 
+            // nuovaToolStripMenuItem1
+            // 
+            this.nuovaToolStripMenuItem1.Image = global::Chiavi.Properties.Resources.key_add;
+            this.nuovaToolStripMenuItem1.Name = "nuovaToolStripMenuItem1";
+            this.nuovaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.nuovaToolStripMenuItem1.Text = "Nuova";
+            this.nuovaToolStripMenuItem1.Click += new System.EventHandler(this.nuovaToolStripMenuItem1_Click);
+            // 
+            // salvaToolStripMenuItem3
+            // 
+            this.salvaToolStripMenuItem3.Image = global::Chiavi.Properties.Resources.key_go;
+            this.salvaToolStripMenuItem3.Name = "salvaToolStripMenuItem3";
+            this.salvaToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.salvaToolStripMenuItem3.Text = "Salva";
+            this.salvaToolStripMenuItem3.Click += new System.EventHandler(this.salvaToolStripMenuItem3_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(128, 6);
+            // 
+            // pagamentiToolStripMenuItem3
+            // 
+            this.pagamentiToolStripMenuItem3.Image = global::Chiavi.Properties.Resources.money;
+            this.pagamentiToolStripMenuItem3.Name = "pagamentiToolStripMenuItem3";
+            this.pagamentiToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.pagamentiToolStripMenuItem3.Text = "Pagamenti";
+            this.pagamentiToolStripMenuItem3.Click += new System.EventHandler(this.pagamentiToolStripMenuItem3_Click);
+            // 
+            // toolStripDropDownButton3
+            // 
+            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.associaAdUtenteToolStripMenuItem,
+            this.dissociaDaUtenteToolStripMenuItem});
+            this.toolStripDropDownButton3.Image = global::Chiavi.Properties.Resources.link;
+            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton3.Text = "toolStripDropDownButton3";
+            this.toolStripDropDownButton3.ToolTipText = "Associazioni";
+            // 
+            // associaAdUtenteToolStripMenuItem
+            // 
+            this.associaAdUtenteToolStripMenuItem.Image = global::Chiavi.Properties.Resources.link_add;
+            this.associaAdUtenteToolStripMenuItem.Name = "associaAdUtenteToolStripMenuItem";
+            this.associaAdUtenteToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.associaAdUtenteToolStripMenuItem.Text = "Associa ad utente";
+            this.associaAdUtenteToolStripMenuItem.Click += new System.EventHandler(this.associaAdUtenteToolStripMenuItem_Click);
+            // 
+            // dissociaDaUtenteToolStripMenuItem
+            // 
+            this.dissociaDaUtenteToolStripMenuItem.Image = global::Chiavi.Properties.Resources.link_delete;
+            this.dissociaDaUtenteToolStripMenuItem.Name = "dissociaDaUtenteToolStripMenuItem";
+            this.dissociaDaUtenteToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.dissociaDaUtenteToolStripMenuItem.Text = "Dissocia da utente";
+            this.dissociaDaUtenteToolStripMenuItem.Click += new System.EventHandler(this.dissociaDaUtenteToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButton4
+            // 
+            this.toolStripDropDownButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.conservaToolStripMenuItem,
+            this.liberaToolStripMenuItem});
+            this.toolStripDropDownButton4.Image = global::Chiavi.Properties.Resources.newspaper;
+            this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
+            this.toolStripDropDownButton4.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton4.Text = "toolStripDropDownButton4";
+            this.toolStripDropDownButton4.ToolTipText = "Opzioni busta";
+            // 
+            // conservaToolStripMenuItem
+            // 
+            this.conservaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.newspaper_add;
+            this.conservaToolStripMenuItem.Name = "conservaToolStripMenuItem";
+            this.conservaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.conservaToolStripMenuItem.Text = "Conserva";
+            this.conservaToolStripMenuItem.Click += new System.EventHandler(this.conservaToolStripMenuItem_Click);
+            // 
+            // liberaToolStripMenuItem
+            // 
+            this.liberaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.newspaper_delete;
+            this.liberaToolStripMenuItem.Name = "liberaToolStripMenuItem";
+            this.liberaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.liberaToolStripMenuItem.Text = "Libera";
+            this.liberaToolStripMenuItem.Click += new System.EventHandler(this.liberaToolStripMenuItem_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = global::Chiavi.Properties.Resources.monitor;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::Chiavi.Properties.Resources.wrench;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "Opzioni";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // chiaviToolStripMenuItem
+            // 
+            this.chiaviToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuovaToolStripMenuItem,
+            this.salvaToolStripMenuItem1,
+            this.pagamentiToolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.conservaBustaToolStripMenuItem,
+            this.liberaBustaToolStripMenuItem,
+            this.toolStripMenuItem3,
+            this.associaToolStripMenuItem,
+            this.disassociaToolStripMenuItem});
+            this.chiaviToolStripMenuItem.Image = global::Chiavi.Properties.Resources.key;
+            this.chiaviToolStripMenuItem.Name = "chiaviToolStripMenuItem";
+            this.chiaviToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.chiaviToolStripMenuItem.Text = "&Chiavi";
+            // 
+            // nuovaToolStripMenuItem
+            // 
+            this.nuovaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.key_add;
+            this.nuovaToolStripMenuItem.Name = "nuovaToolStripMenuItem";
+            this.nuovaToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.nuovaToolStripMenuItem.Text = "Nuova";
+            this.nuovaToolStripMenuItem.Click += new System.EventHandler(this.nuovaToolStripMenuItem_Click);
+            // 
+            // salvaToolStripMenuItem1
+            // 
+            this.salvaToolStripMenuItem1.Image = global::Chiavi.Properties.Resources.key_go;
+            this.salvaToolStripMenuItem1.Name = "salvaToolStripMenuItem1";
+            this.salvaToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.salvaToolStripMenuItem1.Text = "Salva";
+            this.salvaToolStripMenuItem1.Click += new System.EventHandler(this.salvaToolStripMenuItem1_Click);
+            // 
+            // pagamentiToolStripMenuItem1
+            // 
+            this.pagamentiToolStripMenuItem1.Image = global::Chiavi.Properties.Resources.money;
+            this.pagamentiToolStripMenuItem1.Name = "pagamentiToolStripMenuItem1";
+            this.pagamentiToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.pagamentiToolStripMenuItem1.Text = "Pagamenti";
+            this.pagamentiToolStripMenuItem1.Click += new System.EventHandler(this.pagamentiToolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(178, 6);
+            // 
+            // conservaBustaToolStripMenuItem
+            // 
+            this.conservaBustaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.newspaper_add;
+            this.conservaBustaToolStripMenuItem.Name = "conservaBustaToolStripMenuItem";
+            this.conservaBustaToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.conservaBustaToolStripMenuItem.Text = "Conserva busta";
+            this.conservaBustaToolStripMenuItem.Click += new System.EventHandler(this.conservaBustaToolStripMenuItem_Click);
+            // 
+            // liberaBustaToolStripMenuItem
+            // 
+            this.liberaBustaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.newspaper_delete;
+            this.liberaBustaToolStripMenuItem.Name = "liberaBustaToolStripMenuItem";
+            this.liberaBustaToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.liberaBustaToolStripMenuItem.Text = "Libera busta";
+            this.liberaBustaToolStripMenuItem.Click += new System.EventHandler(this.liberaBustaToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(178, 6);
+            // 
+            // associaToolStripMenuItem
+            // 
+            this.associaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.link_add;
+            this.associaToolStripMenuItem.Name = "associaToolStripMenuItem";
+            this.associaToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.associaToolStripMenuItem.Text = "Associa a utente";
+            this.associaToolStripMenuItem.Click += new System.EventHandler(this.associaToolStripMenuItem_Click);
+            // 
+            // disassociaToolStripMenuItem
+            // 
+            this.disassociaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.link_delete;
+            this.disassociaToolStripMenuItem.Name = "disassociaToolStripMenuItem";
+            this.disassociaToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.disassociaToolStripMenuItem.Text = "Disassocia da utente";
+            this.disassociaToolStripMenuItem.Click += new System.EventHandler(this.disassociaToolStripMenuItem_Click);
+            // 
+            // programmaToolStripMenuItem
+            // 
+            this.programmaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sinotticoToolStripMenuItem,
+            this.opzioniToolStripMenuItem,
+            this.backupToolStripMenuItem});
+            this.programmaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.application_add;
+            this.programmaToolStripMenuItem.Name = "programmaToolStripMenuItem";
+            this.programmaToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.programmaToolStripMenuItem.Text = "Programma";
+            // 
+            // sinotticoToolStripMenuItem
+            // 
+            this.sinotticoToolStripMenuItem.Image = global::Chiavi.Properties.Resources.monitor;
+            this.sinotticoToolStripMenuItem.Name = "sinotticoToolStripMenuItem";
+            this.sinotticoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sinotticoToolStripMenuItem.Text = "&Sinottico";
+            this.sinotticoToolStripMenuItem.Click += new System.EventHandler(this.sinotticoToolStripMenuItem_Click);
+            // 
+            // opzioniToolStripMenuItem
+            // 
+            this.opzioniToolStripMenuItem.Image = global::Chiavi.Properties.Resources.wrench;
+            this.opzioniToolStripMenuItem.Name = "opzioniToolStripMenuItem";
+            this.opzioniToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.opzioniToolStripMenuItem.Text = "Opzioni";
+            this.opzioniToolStripMenuItem.Click += new System.EventHandler(this.opzioniToolStripMenuItem_Click);
+            // 
+            // backupToolStripMenuItem
+            // 
+            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.backupToolStripMenuItem.Text = "Backup";
+            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1169, 589);
-            this.Controls.Add(this.button18);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.button20);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.button15);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -687,13 +970,16 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.paymentData)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataKeyView)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -708,14 +994,11 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox txtKeyNumber;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView paymentData;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUserPassword;
         private System.Windows.Forms.TextBox txtUserNote;
@@ -733,31 +1016,62 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dataKeyView;
         private System.Windows.Forms.DataGridViewTextBoxColumn KeyNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExpirationDate;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CreatedAt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hash;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Complete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KeyNum;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label txtKeyPosition;
-        private System.Windows.Forms.Button button15;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListBox listUsers;
-        private System.Windows.Forms.Button button16;
         private System.Windows.Forms.CheckBox ckOnlyNotAssociated;
         private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.ContextMenuStrip menuPagamenti;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.OpenFileDialog restoreDBDialog;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ricercaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem utentiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chiaviToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem programmaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sinotticoToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripMenuItem nuovoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salvaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pagamentiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem opzioniToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuovaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salvaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pagamentiToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem conservaBustaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem liberaBustaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem associaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem disassociaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem nuovoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem salvaToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem pagamentiToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
+        private System.Windows.Forms.ToolStripMenuItem nuovaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem salvaToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem pagamentiToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
+        private System.Windows.Forms.ToolStripMenuItem associaAdUtenteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dissociaDaUtenteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton4;
+        private System.Windows.Forms.ToolStripMenuItem conservaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem liberaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
     }
 }
 

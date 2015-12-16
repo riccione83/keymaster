@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Chiavi
 {
     [Serializable()]
-    class Key
+    public class Key
     {
         string _keyNumber;
         string _userID;

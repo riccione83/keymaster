@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary; 
 
@@ -115,6 +115,7 @@ namespace Chiavi
             string sql = "UPDATE Users SET Name = '" + user.Name + "', Surname = '" + user.Surname + "', Email = '" + user.EmailAddress + "',Password = '" + user.UserPassword + "',Address = '" + user.Address + "',City = '" + user.City + "',Note = '" + user.Note + "' WHERE id = '"+user.ID+"'";
             database.Insert(sql);
         }
+
         public void newUser(User user)
         {
                 DBConnect database = new DBConnect();
@@ -123,5 +124,14 @@ namespace Chiavi
                 users.Add(user);
         }
 
+        public User searchUserByID(string ID)
+        {
+            foreach (User user in users)
+            {
+                if (user.ID == ID)
+                    return user;
+            }
+            return null;
+        }
     }
 }
