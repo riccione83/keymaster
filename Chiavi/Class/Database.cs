@@ -27,12 +27,7 @@ namespace Chiavi
         //Initialize values
         private void Initialize()
         {
-            server = "151.3.164.130";
-            database = "KeysDB";
-            uid = "software";
-            password = "software";
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+           
 
             connection = new MySqlConnection(connectionString);
         }
