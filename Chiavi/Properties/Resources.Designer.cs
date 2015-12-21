@@ -113,6 +113,16 @@ namespace Chiavi.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap key_delete {
+            get {
+                object obj = ResourceManager.GetObject("key_delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap key_go {
             get {
                 object obj = ResourceManager.GetObject("key_go", resourceCulture);

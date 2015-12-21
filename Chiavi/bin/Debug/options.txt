@@ -1,6 +1,6 @@
 COM3
 9600
-False
+True
 2
 10
 10

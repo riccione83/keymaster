@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.txtUserFirstName = new System.Windows.Forms.TextBox();
             this.txtUserSurname = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -36,9 +35,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.txtKeyNumber = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button12 = new System.Windows.Forms.Button();
             this.txtUserEmail = new System.Windows.Forms.TextBox();
@@ -54,15 +50,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ckOnlyNotAssociated = new System.Windows.Forms.CheckBox();
-            this.button14 = new System.Windows.Forms.Button();
             this.txtKeyPosition = new System.Windows.Forms.Label();
             this.dateKeyExpiration = new System.Windows.Forms.DateTimePicker();
             this.txtKeyDescription = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataKeyView = new System.Windows.Forms.DataGridView();
             this.KeyNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,17 +64,10 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.listUsers = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
             this.restoreDBDialog = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.utentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ricercaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuovoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salvaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.pagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.nuovoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,11 +87,19 @@
             this.liberaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.ricercaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuovoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.pagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chiaviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuovaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.nonAssociateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.conservaBustaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liberaBustaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
@@ -122,17 +116,10 @@
             this.groupBox5.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(19, 166);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Conserva busta";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtUserFirstName
             // 
@@ -190,43 +177,15 @@
             // 
             // txtKeyNumber
             // 
-            this.txtKeyNumber.Location = new System.Drawing.Point(90, 28);
+            this.txtKeyNumber.Location = new System.Drawing.Point(98, 28);
             this.txtKeyNumber.Name = "txtKeyNumber";
             this.txtKeyNumber.Size = new System.Drawing.Size(223, 20);
             this.txtKeyNumber.TabIndex = 9;
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(19, 126);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Associate";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(323, 126);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "<<";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(402, 126);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 13;
-            this.button9.Text = ">>";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.button12);
             this.groupBox1.Controls.Add(this.txtUserEmail);
             this.groupBox1.Controls.Add(this.label9);
@@ -246,9 +205,9 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Location = new System.Drawing.Point(160, 66);
+            this.groupBox1.Location = new System.Drawing.Point(4, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(485, 189);
+            this.groupBox1.Size = new System.Drawing.Size(484, 189);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Utente selezionato";
@@ -365,68 +324,44 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.ckOnlyNotAssociated);
-            this.groupBox2.Controls.Add(this.button14);
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.txtKeyPosition);
             this.groupBox2.Controls.Add(this.dateKeyExpiration);
             this.groupBox2.Controls.Add(this.txtKeyDescription);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.button10);
             this.groupBox2.Controls.Add(this.txtKeyNumber);
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.button9);
-            this.groupBox2.Controls.Add(this.button8);
-            this.groupBox2.Location = new System.Drawing.Point(651, 66);
+            this.groupBox2.Location = new System.Drawing.Point(3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(485, 245);
+            this.groupBox2.Size = new System.Drawing.Size(348, 189);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Chiave";
-            // 
-            // ckOnlyNotAssociated
-            // 
-            this.ckOnlyNotAssociated.AutoSize = true;
-            this.ckOnlyNotAssociated.Location = new System.Drawing.Point(49, -1);
-            this.ckOnlyNotAssociated.Name = "ckOnlyNotAssociated";
-            this.ckOnlyNotAssociated.Size = new System.Drawing.Size(163, 17);
-            this.ckOnlyNotAssociated.TabIndex = 23;
-            this.ckOnlyNotAssociated.Text = "Visualizza solo non associate";
-            this.ckOnlyNotAssociated.UseVisualStyleBackColor = true;
-            this.ckOnlyNotAssociated.CheckedChanged += new System.EventHandler(this.ckOnlyNotAssociated_CheckedChanged);
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(132, 166);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(107, 23);
-            this.button14.TabIndex = 19;
-            this.button14.Text = "Libera busta";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.groupBox2.Text = "Chiave selezionata";
             // 
             // txtKeyPosition
             // 
-            this.txtKeyPosition.AutoSize = true;
+            this.txtKeyPosition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKeyPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKeyPosition.Location = new System.Drawing.Point(13, 211);
+            this.txtKeyPosition.Location = new System.Drawing.Point(6, 127);
             this.txtKeyPosition.Name = "txtKeyPosition";
-            this.txtKeyPosition.Size = new System.Drawing.Size(164, 31);
+            this.txtKeyPosition.Size = new System.Drawing.Size(336, 31);
             this.txtKeyPosition.TabIndex = 22;
             this.txtKeyPosition.Text = "No Position";
+            this.txtKeyPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dateKeyExpiration
             // 
-            this.dateKeyExpiration.Location = new System.Drawing.Point(90, 89);
+            this.dateKeyExpiration.Location = new System.Drawing.Point(98, 89);
             this.dateKeyExpiration.Name = "dateKeyExpiration";
             this.dateKeyExpiration.Size = new System.Drawing.Size(223, 20);
             this.dateKeyExpiration.TabIndex = 19;
             // 
             // txtKeyDescription
             // 
-            this.txtKeyDescription.Location = new System.Drawing.Point(90, 60);
+            this.txtKeyDescription.Location = new System.Drawing.Point(98, 60);
             this.txtKeyDescription.Name = "txtKeyDescription";
             this.txtKeyDescription.Size = new System.Drawing.Size(223, 20);
             this.txtKeyDescription.TabIndex = 18;
@@ -436,44 +371,36 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(16, 95);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 13);
+            this.label11.Size = new System.Drawing.Size(58, 13);
             this.label11.TabIndex = 17;
-            this.label11.Text = "Expire date:";
+            this.label11.Text = "Scadenza:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(16, 63);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 13);
+            this.label10.Size = new System.Drawing.Size(65, 13);
             this.label10.TabIndex = 16;
-            this.label10.Text = "Description:";
+            this.label10.Text = "Descrizione:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(16, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
+            this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Key Number:";
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(148, 126);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 14;
-            this.button10.Text = "Deassociate";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.label4.Text = "Numero busta:";
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.dataKeyView);
-            this.groupBox4.Location = new System.Drawing.Point(160, 261);
+            this.groupBox4.Location = new System.Drawing.Point(4, 198);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(485, 189);
+            this.groupBox4.Size = new System.Drawing.Size(484, 189);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chiavi associate";
@@ -494,7 +421,7 @@
             this.dataKeyView.Name = "dataKeyView";
             this.dataKeyView.ReadOnly = true;
             this.dataKeyView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataKeyView.Size = new System.Drawing.Size(472, 150);
+            this.dataKeyView.Size = new System.Drawing.Size(471, 150);
             this.dataKeyView.TabIndex = 0;
             this.dataKeyView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataKeyView_CellContentClick);
             this.dataKeyView.SelectionChanged += new System.EventHandler(this.dataKeyView_SelectionChanged);
@@ -527,7 +454,7 @@
             this.groupBox5.Controls.Add(this.textBox1);
             this.groupBox5.Location = new System.Drawing.Point(2, 66);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(141, 523);
+            this.groupBox5.Size = new System.Drawing.Size(141, 524);
             this.groupBox5.TabIndex = 20;
             this.groupBox5.TabStop = false;
             // 
@@ -551,26 +478,6 @@
             this.textBox1.Size = new System.Drawing.Size(129, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(1061, 364);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 23);
-            this.button17.TabIndex = 21;
-            this.button17.Text = "Test email";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(1061, 393);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 23);
-            this.button20.TabIndex = 25;
-            this.button20.Text = "Restore";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // restoreDBDialog
             // 
@@ -607,56 +514,26 @@
             this.toolStrip1.TabIndex = 28;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // utentiToolStripMenuItem
+            // splitContainer1
             // 
-            this.utentiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuovoToolStripMenuItem,
-            this.salvaToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.pagamentiToolStripMenuItem});
-            this.utentiToolStripMenuItem.Image = global::Chiavi.Properties.Resources.user;
-            this.utentiToolStripMenuItem.Name = "utentiToolStripMenuItem";
-            this.utentiToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.utentiToolStripMenuItem.Text = "&Utenti";
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Location = new System.Drawing.Point(149, 52);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // ricercaToolStripMenuItem
+            // splitContainer1.Panel1
             // 
-            this.ricercaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.zoom;
-            this.ricercaToolStripMenuItem.Name = "ricercaToolStripMenuItem";
-            this.ricercaToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
-            this.ricercaToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.ricercaToolStripMenuItem.Text = "&Ricerca";
-            this.ricercaToolStripMenuItem.Click += new System.EventHandler(this.ricercaToolStripMenuItem_Click);
+            this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.groupBox4);
             // 
-            // nuovoToolStripMenuItem
+            // splitContainer1.Panel2
             // 
-            this.nuovoToolStripMenuItem.Image = global::Chiavi.Properties.Resources.user_add;
-            this.nuovoToolStripMenuItem.Name = "nuovoToolStripMenuItem";
-            this.nuovoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.nuovoToolStripMenuItem.Text = "Nuovo";
-            this.nuovoToolStripMenuItem.Click += new System.EventHandler(this.nuovoToolStripMenuItem_Click);
-            // 
-            // salvaToolStripMenuItem
-            // 
-            this.salvaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.user_edit;
-            this.salvaToolStripMenuItem.Name = "salvaToolStripMenuItem";
-            this.salvaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.salvaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.salvaToolStripMenuItem.Text = "Salva";
-            this.salvaToolStripMenuItem.Click += new System.EventHandler(this.salvaToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 6);
-            // 
-            // pagamentiToolStripMenuItem
-            // 
-            this.pagamentiToolStripMenuItem.Image = global::Chiavi.Properties.Resources.money;
-            this.pagamentiToolStripMenuItem.Name = "pagamentiToolStripMenuItem";
-            this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.pagamentiToolStripMenuItem.Text = "Pagamenti";
-            this.pagamentiToolStripMenuItem.Click += new System.EventHandler(this.pagamentiToolStripMenuItem_Click);
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
+            this.splitContainer1.Size = new System.Drawing.Size(1020, 537);
+            this.splitContainer1.SplitterDistance = 496;
+            this.splitContainer1.TabIndex = 30;
             // 
             // toolStripButton1
             // 
@@ -686,7 +563,7 @@
             // 
             this.nuovoToolStripMenuItem1.Image = global::Chiavi.Properties.Resources.user_add;
             this.nuovoToolStripMenuItem1.Name = "nuovoToolStripMenuItem1";
-            this.nuovoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.nuovoToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.nuovoToolStripMenuItem1.Text = "Nuovo";
             this.nuovoToolStripMenuItem1.Click += new System.EventHandler(this.nuovoToolStripMenuItem1_Click);
             // 
@@ -694,7 +571,7 @@
             // 
             this.salvaToolStripMenuItem2.Image = global::Chiavi.Properties.Resources.user_edit;
             this.salvaToolStripMenuItem2.Name = "salvaToolStripMenuItem2";
-            this.salvaToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.salvaToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
             this.salvaToolStripMenuItem2.Text = "Salva";
             this.salvaToolStripMenuItem2.Click += new System.EventHandler(this.salvaToolStripMenuItem2_Click);
             // 
@@ -707,7 +584,7 @@
             // 
             this.pagamentiToolStripMenuItem2.Image = global::Chiavi.Properties.Resources.money;
             this.pagamentiToolStripMenuItem2.Name = "pagamentiToolStripMenuItem2";
-            this.pagamentiToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.pagamentiToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
             this.pagamentiToolStripMenuItem2.Text = "Pagamenti";
             this.pagamentiToolStripMenuItem2.Click += new System.EventHandler(this.pagamentiToolStripMenuItem2_Click);
             // 
@@ -729,7 +606,7 @@
             // 
             this.nuovaToolStripMenuItem1.Image = global::Chiavi.Properties.Resources.key_add;
             this.nuovaToolStripMenuItem1.Name = "nuovaToolStripMenuItem1";
-            this.nuovaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.nuovaToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.nuovaToolStripMenuItem1.Text = "Nuova";
             this.nuovaToolStripMenuItem1.Click += new System.EventHandler(this.nuovaToolStripMenuItem1_Click);
             // 
@@ -737,7 +614,7 @@
             // 
             this.salvaToolStripMenuItem3.Image = global::Chiavi.Properties.Resources.key_go;
             this.salvaToolStripMenuItem3.Name = "salvaToolStripMenuItem3";
-            this.salvaToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.salvaToolStripMenuItem3.Size = new System.Drawing.Size(131, 22);
             this.salvaToolStripMenuItem3.Text = "Salva";
             this.salvaToolStripMenuItem3.Click += new System.EventHandler(this.salvaToolStripMenuItem3_Click);
             // 
@@ -750,7 +627,7 @@
             // 
             this.pagamentiToolStripMenuItem3.Image = global::Chiavi.Properties.Resources.money;
             this.pagamentiToolStripMenuItem3.Name = "pagamentiToolStripMenuItem3";
-            this.pagamentiToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.pagamentiToolStripMenuItem3.Size = new System.Drawing.Size(131, 22);
             this.pagamentiToolStripMenuItem3.Text = "Pagamenti";
             this.pagamentiToolStripMenuItem3.Click += new System.EventHandler(this.pagamentiToolStripMenuItem3_Click);
             // 
@@ -800,7 +677,7 @@
             // 
             this.conservaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.newspaper_add;
             this.conservaToolStripMenuItem.Name = "conservaToolStripMenuItem";
-            this.conservaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.conservaToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.conservaToolStripMenuItem.Text = "Conserva";
             this.conservaToolStripMenuItem.Click += new System.EventHandler(this.conservaToolStripMenuItem_Click);
             // 
@@ -808,7 +685,7 @@
             // 
             this.liberaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.newspaper_delete;
             this.liberaToolStripMenuItem.Name = "liberaToolStripMenuItem";
-            this.liberaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.liberaToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.liberaToolStripMenuItem.Text = "Libera";
             this.liberaToolStripMenuItem.Click += new System.EventHandler(this.liberaToolStripMenuItem_Click);
             // 
@@ -832,6 +709,57 @@
             this.toolStripButton2.Text = "Opzioni";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // ricercaToolStripMenuItem
+            // 
+            this.ricercaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.zoom;
+            this.ricercaToolStripMenuItem.Name = "ricercaToolStripMenuItem";
+            this.ricercaToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
+            this.ricercaToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.ricercaToolStripMenuItem.Text = "&Ricerca";
+            this.ricercaToolStripMenuItem.Click += new System.EventHandler(this.ricercaToolStripMenuItem_Click);
+            // 
+            // utentiToolStripMenuItem
+            // 
+            this.utentiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuovoToolStripMenuItem,
+            this.salvaToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.pagamentiToolStripMenuItem});
+            this.utentiToolStripMenuItem.Image = global::Chiavi.Properties.Resources.user;
+            this.utentiToolStripMenuItem.Name = "utentiToolStripMenuItem";
+            this.utentiToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.utentiToolStripMenuItem.Text = "&Utenti";
+            // 
+            // nuovoToolStripMenuItem
+            // 
+            this.nuovoToolStripMenuItem.Image = global::Chiavi.Properties.Resources.user_add;
+            this.nuovoToolStripMenuItem.Name = "nuovoToolStripMenuItem";
+            this.nuovoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuovoToolStripMenuItem.Text = "Nuovo";
+            this.nuovoToolStripMenuItem.Click += new System.EventHandler(this.nuovoToolStripMenuItem_Click);
+            // 
+            // salvaToolStripMenuItem
+            // 
+            this.salvaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.user_edit;
+            this.salvaToolStripMenuItem.Name = "salvaToolStripMenuItem";
+            this.salvaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.salvaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salvaToolStripMenuItem.Text = "Salva";
+            this.salvaToolStripMenuItem.Click += new System.EventHandler(this.salvaToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // pagamentiToolStripMenuItem
+            // 
+            this.pagamentiToolStripMenuItem.Image = global::Chiavi.Properties.Resources.money;
+            this.pagamentiToolStripMenuItem.Name = "pagamentiToolStripMenuItem";
+            this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pagamentiToolStripMenuItem.Text = "Pagamenti";
+            this.pagamentiToolStripMenuItem.Click += new System.EventHandler(this.pagamentiToolStripMenuItem_Click);
+            // 
             // chiaviToolStripMenuItem
             // 
             this.chiaviToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -839,6 +767,8 @@
             this.salvaToolStripMenuItem1,
             this.pagamentiToolStripMenuItem1,
             this.toolStripMenuItem2,
+            this.nonAssociateToolStripMenuItem,
+            this.toolStripSeparator1,
             this.conservaBustaToolStripMenuItem,
             this.liberaBustaToolStripMenuItem,
             this.toolStripMenuItem3,
@@ -878,6 +808,20 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(178, 6);
             // 
+            // nonAssociateToolStripMenuItem
+            // 
+            this.nonAssociateToolStripMenuItem.Image = global::Chiavi.Properties.Resources.key_delete;
+            this.nonAssociateToolStripMenuItem.Name = "nonAssociateToolStripMenuItem";
+            this.nonAssociateToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.nonAssociateToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.nonAssociateToolStripMenuItem.Text = "Non associate";
+            this.nonAssociateToolStripMenuItem.Click += new System.EventHandler(this.nonAssociateToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(178, 6);
+            // 
             // conservaBustaToolStripMenuItem
             // 
             this.conservaBustaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.newspaper_add;
@@ -903,6 +847,7 @@
             // 
             this.associaToolStripMenuItem.Image = global::Chiavi.Properties.Resources.link_add;
             this.associaToolStripMenuItem.Name = "associaToolStripMenuItem";
+            this.associaToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
             this.associaToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.associaToolStripMenuItem.Text = "Associa a utente";
             this.associaToolStripMenuItem.Click += new System.EventHandler(this.associaToolStripMenuItem_Click);
@@ -953,18 +898,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 589);
+            this.ClientSize = new System.Drawing.Size(1169, 590);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.button20);
-            this.Controls.Add(this.button17);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "2858 - Gestione Chiavi";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -978,6 +919,9 @@
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -985,7 +929,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtUserFirstName;
         private System.Windows.Forms.TextBox txtUserSurname;
         private System.Windows.Forms.Button button2;
@@ -993,12 +936,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox txtKeyNumber;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUserPassword;
         private System.Windows.Forms.TextBox txtUserNote;
@@ -1022,14 +961,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExpirationDate;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label txtKeyPosition;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListBox listUsers;
-        private System.Windows.Forms.CheckBox ckOnlyNotAssociated;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button20;
         private System.Windows.Forms.OpenFileDialog restoreDBDialog;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ricercaToolStripMenuItem;
@@ -1072,6 +1007,9 @@
         private System.Windows.Forms.ToolStripMenuItem liberaToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.ToolStripMenuItem nonAssociateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

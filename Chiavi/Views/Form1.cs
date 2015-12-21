@@ -193,6 +193,16 @@ namespace Chiavi
                 dataKeyView.Rows[index].Cells["ExpirationDate"].Value = key.ExpiryDate;
                 index++;
             }
+
+            if (this.dataKeyView.Rows.Count > 0)
+            {
+                int row = 0;
+                if (dataKeyView.Rows[row].Cells["KeyNumber"].Value != null)
+                {
+                    string keyNumber = dataKeyView.Rows[row].Cells["KeyNumber"].Value.ToString();
+                    updateCardInfo(users.keys.current(keyNumber));
+                }
+            }
         }
 
         public void selectUser(User user)
@@ -229,10 +239,10 @@ namespace Chiavi
         {
             if (this.dataKeyView.SelectedRows.Count > 0)
             {
-                DataGridViewRow row = this.dataKeyView.SelectedRows[0];
-                if (row.Cells["KeyNumber"].Value != null)
+                int row = this.dataKeyView.SelectedRows[0].Index;
+                if(dataKeyView.Rows[row].Cells["KeyNumber"].Value != null)
                 {
-                    string keyNumber = row.Cells["KeyNumber"].Value.ToString();
+                    string keyNumber = dataKeyView.Rows[row].Cells["KeyNumber"].Value.ToString();
                     updateCardInfo(users.keys.current(keyNumber));
                 }
             }
@@ -308,7 +318,7 @@ namespace Chiavi
 
         private void ckOnlyNotAssociated_CheckedChanged(object sender, EventArgs e)
         {
-            if (ckOnlyNotAssociated.Checked)
+           /* if (ckOnlyNotAssociated.Checked)
             {
                 users.keys.loadFreeKey();
             }
@@ -316,7 +326,7 @@ namespace Chiavi
             {
                 users.keys.loadAllKey();
             }
-            updateCardInfo(users.keys.current());
+            updateCardInfo(users.keys.current());*/
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -555,7 +565,10 @@ namespace Chiavi
             string question = "Sicuro di voler associare la CARD n." + users.keys.current().KeyNumber + " con il cliente " + users.current().Surname + " " + users.current().Name + "?";
             DialogResult result = MessageBox.Show(question, "Associare?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == System.Windows.Forms.DialogResult.Yes)
+            {
                 users.keys.associateToUser(users.current().ID, users.keys.current());
+                printAssociatedKey(users.current());
+            }
         }
 
         private void dissocKeyFromUser()
@@ -563,7 +576,10 @@ namespace Chiavi
             string question = "Sicuro di voler separate la CARD n." + users.keys.current().KeyNumber + " con il cliente " + users.current().Surname + " " + users.current().Name + "?";
             DialogResult result = MessageBox.Show(question, "Disassociare?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == System.Windows.Forms.DialogResult.Yes)
+            {
                 users.keys.deassociateFromUser(users.current().ID, users.keys.current());
+                printAssociatedKey(users.current());
+            }
         }
         private void disassociaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -641,6 +657,24 @@ namespace Chiavi
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             showOptionForm();
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void nonAssociateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFreeKeys freeKeyFrm = new frmFreeKeys();
+            freeKeyFrm.mainFrm = this;
+            freeKeyFrm.Show();
+        }
+
+        public void setCurrentKey(Key key)
+        {
+            users.keys.current(key.KeyNumber);
+            updateCardInfo(key);
         }
     }
 }

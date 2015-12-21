@@ -130,7 +130,7 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
             this.toolStripMenuItem1.Text = "Esporta";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -147,7 +147,7 @@
             this.ClientSize = new System.Drawing.Size(826, 337);
             this.Controls.Add(this.groupBox3);
             this.Name = "frmPagamenti";
-            this.Text = "frmPagamenti";
+            this.Text = "Visualizza pagamenti";
             this.Load += new System.EventHandler(this.frmPagamenti_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.paymentData)).EndInit();

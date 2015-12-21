@@ -181,6 +181,13 @@ namespace Chiavi
             return null;
         }
 
+        public void deleteKey(string KeyNumber)
+        {
+            string query = "DELETE FROM `keys` WHERE KeyNumber = '" + KeyNumber + "'";
+            DBConnect database = new DBConnect();
+            database.Delete(query);
+        }
+
         public int KeyExist(string KeyNumber)
         {
             string query = "SELECT Count(*) FROM `keys` WHERE KeyNumber = '"+KeyNumber+"'";

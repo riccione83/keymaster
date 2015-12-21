@@ -31,22 +31,22 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgSearchUser = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgSearchKey = new System.Windows.Forms.DataGridView();
             this.KeyNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExpirationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgSearchUser = new System.Windows.Forms.DataGridView();
             this.Cognome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgSearchUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearchKey)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSearchUser)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -88,38 +88,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ricerca";
             // 
-            // dgSearchUser
-            // 
-            this.dgSearchUser.AllowUserToAddRows = false;
-            this.dgSearchUser.AllowUserToDeleteRows = false;
-            this.dgSearchUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgSearchUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSearchUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Cognome,
-            this.Nome,
-            this.Email,
-            this.Address,
-            this.City,
-            this.Note});
-            this.dgSearchUser.Location = new System.Drawing.Point(6, 56);
-            this.dgSearchUser.Name = "dgSearchUser";
-            this.dgSearchUser.ReadOnly = true;
-            this.dgSearchUser.Size = new System.Drawing.Size(1080, 190);
-            this.dgSearchUser.TabIndex = 1;
-            this.dgSearchUser.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSearchUser_CellContentDoubleClick);
-            this.dgSearchUser.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSearchUser_CellDoubleClick);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(6, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1080, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // dgSearchKey
             // 
             this.dgSearchKey.AllowUserToAddRows = false;
@@ -158,11 +126,34 @@
             this.ExpirationDate.HeaderText = "Expiration Date";
             this.ExpirationDate.Name = "ExpirationDate";
             // 
+            // dgSearchUser
+            // 
+            this.dgSearchUser.AllowUserToAddRows = false;
+            this.dgSearchUser.AllowUserToDeleteRows = false;
+            this.dgSearchUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgSearchUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSearchUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cognome,
+            this.Nome,
+            this.Email,
+            this.Address,
+            this.City,
+            this.Note});
+            this.dgSearchUser.Location = new System.Drawing.Point(6, 56);
+            this.dgSearchUser.Name = "dgSearchUser";
+            this.dgSearchUser.ReadOnly = true;
+            this.dgSearchUser.Size = new System.Drawing.Size(1080, 190);
+            this.dgSearchUser.TabIndex = 1;
+            this.dgSearchUser.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSearchUser_CellContentDoubleClick);
+            this.dgSearchUser.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSearchUser_CellDoubleClick);
+            // 
             // Cognome
             // 
             this.Cognome.FillWeight = 200F;
             this.Cognome.HeaderText = "Cognome";
             this.Cognome.Name = "Cognome";
+            this.Cognome.ReadOnly = true;
             this.Cognome.Width = 200;
             // 
             // Nome
@@ -170,29 +161,44 @@
             this.Nome.FillWeight = 200F;
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
             this.Nome.Width = 200;
             // 
             // Email
             // 
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // Address
             // 
             this.Address.HeaderText = "Address";
             this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
             // 
             // City
             // 
             this.City.HeaderText = "City";
             this.City.Name = "City";
+            this.City.ReadOnly = true;
             // 
             // Note
             // 
             this.Note.FillWeight = 300F;
             this.Note.HeaderText = "Note";
             this.Note.Name = "Note";
+            this.Note.ReadOnly = true;
             this.Note.Width = 300;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(6, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(1080, 20);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // frmSearch
             // 
@@ -202,13 +208,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmSearch";
-            this.Text = "frmSearch";
+            this.Text = "Ricerca";
             this.Load += new System.EventHandler(this.frmSearch_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgSearchUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearchKey)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSearchUser)).EndInit();
             this.ResumeLayout(false);
 
         }

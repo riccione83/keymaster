@@ -229,7 +229,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmOptions";
-            this.Text = "frmOptions";
+            this.Text = "Opzioni";
             this.Load += new System.EventHandler(this.frmOptions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
