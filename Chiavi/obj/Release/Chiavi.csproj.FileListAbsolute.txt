@@ -11,3 +11,5 @@ C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\C
 C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.csproj.GenerateResource.Cache
 C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.exe
 C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.pdb
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.csprojResolveAssemblyReference.cache
+C:\Users\Riky\Documents\Visual Studio 2013\Projects\Chiavi\keymaster\keymaster\Chiavi\obj\Release\Chiavi.frmFreeKeys.resources

@@ -53,13 +53,16 @@ namespace Chiavi
 
         public void setCurrent(User user)
         {
-            index = 0;
-            for(int i=0; i<users.Count; i++)
+            if (user != null)
             {
-                if (users[i].ID == user.ID)
+                index = 0;
+                for (int i = 0; i < users.Count; i++)
                 {
-                    index = i;
-                    break;
+                    if (users[i].ID == user.ID)
+                    {
+                        index = i;
+                        break;
+                    }
                 }
             }
         }

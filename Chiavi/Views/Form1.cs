@@ -136,7 +136,7 @@ namespace Chiavi
                 user.City = txtUserCity.Text;
                 user.EmailAddress = txtUserEmail.Text;
                 user.Note = txtUserNote.Text;
-                user.UserPassword = txtUserNote.Text;
+                user.UserPassword = txtUserPassword.Text;
                 if (isNew)
                 {
                     users.newUser(user);
