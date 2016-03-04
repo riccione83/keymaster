@@ -23,7 +23,7 @@ namespace Chiavi
                 EnableSsl = false,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials =  new System.Net.NetworkCredential("rizzo@2858.it", "Sabrina1009")
+                Credentials =  new System.Net.NetworkCredential("", "")
             };
 
             Thread T1 = new Thread(delegate()
@@ -51,7 +51,7 @@ namespace Chiavi
                 EnableSsl = false,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials =  new System.Net.NetworkCredential("rizzo@2858.it", "Sabrina1009")
+                Credentials =  new System.Net.NetworkCredential("", "")
             };
 
             Thread T1 = new Thread(delegate()
